@@ -33,7 +33,9 @@ public class TestServlet extends HttpServlet {
 		
 		//req , res
 		//요청, 응답
-		//요청을 받았을때 새로운 페이지를 요청한다.
+		//요청을 받았을때 새로운 페이지를 요청한다. (req)
+		//Model : 현재 param.equals 해놓은 부분을 DAO(JDBC) 이용해서 select 쿼리 수행 후 결과로 판단하게 수정.
+		//ex) id : 1234, pw:1234 => newPAge , else 올바른 요청아님
 		if(param != null && param.equals("newPage")) {
 			RequestDispatcher rd = req.getRequestDispatcher("index.html");
 			rd.forward(req, res);

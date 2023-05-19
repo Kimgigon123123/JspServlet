@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1>ㅎㅇ</h1>
+ <h2>netstat -ano (포트확인)
+taskkill /pid 14836 /f (포트의 pid를 넣어서 닫기)</h2>
+</body>
+</html>
