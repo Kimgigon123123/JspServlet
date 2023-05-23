@@ -1,0 +1,9 @@
+package Member;
+
+public class DTO {
+
+	public int num;
+	public String str;
+	
+	
+}

@@ -285,3 +285,9 @@
 192.168.0.36 - - [22/May/2023:13:04:12 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id= HTTP/1.1" 200 259
 192.168.0.36 - - [22/May/2023:13:04:12 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id= HTTP/1.1" 200 259
 192.168.0.36 - - [22/May/2023:13:04:12 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id= HTTP/1.1" 200 259
+192.168.0.36 - - [22/May/2023:14:55:44 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id= HTTP/1.1" 200 258
+192.168.0.36 - - [22/May/2023:14:56:09 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id= HTTP/1.1" 200 302
+192.168.0.36 - - [22/May/2023:14:56:20 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id= HTTP/1.1" 200 316
+192.168.0.36 - - [22/May/2023:15:16:34 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id=&pw= HTTP/1.1" 200 316
+192.168.0.36 - - [22/May/2023:15:16:37 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id=123&pw=123 HTTP/1.1" 200 316
+192.168.0.36 - - [22/May/2023:15:16:41 +0900] "GET /imp/Ex01_Request/Ex99_Practice.jsp?id=123&pw=123 HTTP/1.1" 200 316

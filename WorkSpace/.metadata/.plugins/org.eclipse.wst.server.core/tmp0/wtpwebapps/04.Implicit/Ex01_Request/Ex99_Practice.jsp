@@ -8,10 +8,13 @@
 </head>
 <body>
 	<h1>연습!</h1>
-	<form>
+	<form action="../Ex99_Practice">
 	
 	<input type = "text" name ="id", id="id">
-	<input type = "submmit" value="로그인">
+	<br>
+	<input type = "text" name ="pw", id="pw">
+	<br>
+	<input type = "submit" value="로그인">
 	
 	</form>
 </body>
