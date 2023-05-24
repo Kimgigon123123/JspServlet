@@ -14,11 +14,6 @@ public class DTO {
 
 	public int num;
 	public String str;
-	public DTO(int num, String str) {
-		super();
-		this.num = num;
-		this.str = str;
-	}
 	public int getNum() {
 		return num;
 	}

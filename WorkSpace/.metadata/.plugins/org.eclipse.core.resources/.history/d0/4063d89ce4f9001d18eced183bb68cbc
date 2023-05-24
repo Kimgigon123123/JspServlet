@@ -1,0 +1,75 @@
+package Member;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import customer.CustomerVO;
+
+public class KggDAO {
+	public void test() {
+		String resource = "mybatis/conn.xml";
+		InputStream inputStream = null;
+		try {
+			inputStream = Resources.getResourceAsStream(resource);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SqlSessionFactory sqlSessionFactory =
+		  new SqlSessionFactoryBuilder().build(inputStream);
+		
+		
+		try (SqlSession session = sqlSessionFactory.openSession()) {
+			 int dualInt = session.selectOne("kgg.dual");
+			 //session.method( -> .insert,update,delete,selectOne,selectList)
+			 //selectOne . selectList
+			 // 데이터 한건, 여러건 조회
+			 // selectOne("") => parameter (statement)
+			 //mapper namespace.id
+//			 System.out.println("mybatis를 통해 select : " + dualInt);
+//			 DTO vo = session.selectOne("kgg.voselect");
+//			 System.out.println(vo.num);
+//			 System.out.println(vo.str);
+//			 List<DTO> voList = session.selectList("kgg.listselect");
+//			 System.out.println("리스트 사이즈 : "+voList.size());
+			
+//			파라메터의 전송은 단 하나의 객체만 가능하다 => String , int , ArrayList, HashMap...
+			 
+			 
+			 //$,# <=
+			 //$ 표시는 ex) vo를 파라메터로 넘기면 vo에 값을 그대로 출력(조건으로 사용)
+			 //  			where id = field1 (x) field1 이라는 컬럼이 없기 때문에 오류
+			 // # 표시는 데이터 타입에 맞춰서 처리가 된다.
+			 //    where id = 'field1' (o) 값 비교이기 때문에 오류 x
+			 
+			 // 파라메터는 어떤타입이든 상관없지만 하나만 전송할수있음. (Parameter Object)
+			 // 변수를 여러개 가지고있는 클래스를 만든다(구조가 DB와 같은것 ==> VO,DTO 활용)
+			 
+//			 String data = session.selectOne("kgg.selectwhere1",1);
+//			 System.out.println(data);
+			 
+			 CustomerVO vo = new CustomerVO();
+			 vo.setId(1);
+			 vo.setName("권영균");
+//			 
+//			 String data = session.selectOne("kgg.selectwhere2",vo);
+//			 System.out.println(data);
+			 
+//			 CustomerVO data = session.selectOne("kgg.selectwhere3",vo);
+//			 System.out.println(data);
+			 
+			 //CustomerVO 3건을 받고 내용을 console창에 출력해보기.
+			 // 3건의 조건은 id가 2보다 큰 데이터 3건 이상 selectwhere3
+			 
+			 List<CustomerVO> data = session.selectList("kgg.selectwhere3", vo);
+			 System.out.println(data);
+			 
+		}
+	}
+}

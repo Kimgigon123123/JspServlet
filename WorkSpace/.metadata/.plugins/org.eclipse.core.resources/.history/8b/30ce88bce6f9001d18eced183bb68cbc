@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kgg">
+  <select id="dual" resultType="Integer">
+    select 1 from dual
+  </select>
+  
+  <select id="voselect" resultType="Member.DTO">
+  	select 999 num, 'dbfield1' str from dual
+  
+  </select>
+  
+  <select id ="listselect" resultType="Member.DTO">
+  select 'dbfield1' str , 999 num
+  from dual
+  union
+  select 'dbfield2' str , 888 num
+  from dual 
+  </select>
+  
+  <select id="selectwhere1" resultType="String">
+  	select name from customer where id=#{raaaa} <!--  $가 아니라 #임!! -->
+  	<!-- 파라메터가 기본형 변수의 값만 있다면 key값이 없으므로 #{아무값}써도됨 -->
+  </select>
+  
+  <select id="selectwhere2" resultType="String">
+  select name from customer
+  where id=#{id} and name =#{name}
+  </select>
+  
+  <select id="selectwhere3" resultType="customer.CustomerVO">
+  select id,name,email from customer
+  where id>=2
+  </select>
+  
+  <!--  <select id="selectwhere3" resultType="customer.CustomerVO">
+  select * from customer
+  where id=#{id} and name =#{name} 
+  </select> -->
+  
+  
+</mapper>

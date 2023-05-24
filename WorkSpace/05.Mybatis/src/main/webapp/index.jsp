@@ -43,8 +43,8 @@
 					  1. 내이니셜 a태그 누르면 Controller가 요청받아서 콘솔창에 나오게한다.
 					  2. 페이지를 Controller에서 다시 요청하는 객체(rd)를 초기화 시킨다.
 					  3. 페이지 전환 시 전환되는 페이지 필요한 정보를 request에 세팅한다. -->
-				<li><a href="#">게시판</a></li>
-				<li><a href="#">게시판</a></li>
+				<li><a href="list.bat">게시판</a></li>
+				
 			</ul>
 
 
