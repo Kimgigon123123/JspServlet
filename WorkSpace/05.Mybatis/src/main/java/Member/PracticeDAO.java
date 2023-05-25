@@ -1,0 +1,60 @@
+package Member;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import customer.CustomerVO;
+
+public class PracticeDAO {
+
+	
+	public void test() {
+		String resource = "mybatis/practice.xml";
+		InputStream inputStream = null;
+		try {
+			inputStream = Resources.getResourceAsStream(resource);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SqlSessionFactory sqlSessionFactory =
+		  new SqlSessionFactoryBuilder().build(inputStream);
+		
+		
+		try (SqlSession session = sqlSessionFactory.openSession()) {
+			 int dualInt = session.selectOne("practice.dual");
+			 System.out.println("mybatis를 통해 select : " + dualInt);
+			 
+			 String data = session.selectOne("practice.selectwhere1",2);
+			 System.out.println(data);
+			 
+			 
+			 CustomerVO vo = new CustomerVO();
+			 vo.setId(1);
+			 vo.setName("권영균");
+			 
+			 
+			 String data2 = session.selectOne("practice.selectwhere2",vo);
+			 System.out.println(data2);
+			 
+			 List<CustomerVO> data3 = session.selectList("practice.selectwhere3", vo);
+				for ( CustomerVO vo1 : data3) {
+					System.out.println(vo1.getId()+vo1.getName()+vo1.getEmail());
+				}
+				
+				 HashMap<String,Object> params = new HashMap<String, Object>();
+				 params.put("name","김기곤" );
+				 params.put("money", 28800);
+				 
+				 int money = session.selectOne("practice.mapselect",params);
+				 System.out.println(money);
+		}
+	}
+}

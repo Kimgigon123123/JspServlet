@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>인설트</h1>
+	<form action="update.cu">
+	<input type="text" name="id" value="${vo.id }">
+	<input type="text" name="name" value="${vo.name }">
+	<input type="text" name="gender" value="${vo.gender }">	
+	<input type="text" name="email" value="${vo.email }">
+	<input type="text" name="phone" value="${vo.phone }">
+	<input type="submit">
+	</form>
+</body>
+</html>

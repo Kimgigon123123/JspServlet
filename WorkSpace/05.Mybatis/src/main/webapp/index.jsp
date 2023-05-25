@@ -32,7 +32,10 @@
 			</h1>
 			<ul id="gnb">
 				<li><a href="list.js">JSTL(TEST_DB)</a></li>
-				<li><a href="#">사원목록</a></li>
+				<!--  	(cu를 요청 받는 Servlet)
+						list.cu가 요청되면 요청을 받을 Servlet을 만들고
+						customer/list.jsp 파일로 요청이 전달되게 처리해보기 -->
+				<li><a href="list.cu">사원목록</a></li>
 				<li><a href="#">고객관리</a></li>
 				<li><a href="list.kgg">KGG</a>
 				<!--  list.kgg를 요청하면 요청을 받을수있는 Controller를 추가한다.
@@ -43,7 +46,8 @@
 					  1. 내이니셜 a태그 누르면 Controller가 요청받아서 콘솔창에 나오게한다.
 					  2. 페이지를 Controller에서 다시 요청하는 객체(rd)를 초기화 시킨다.
 					  3. 페이지 전환 시 전환되는 페이지 필요한 정보를 request에 세팅한다. -->
-				<li><a href="list.bat">게시판</a></li>
+				<li><a href="list.bat">mybatis</a></li>
+				<li><a href="list.pcbat">practiceMyBatis</a><li>
 				
 			</ul>
 

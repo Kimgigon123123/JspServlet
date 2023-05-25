@@ -17,6 +17,17 @@ public class DTO {
 	public int getNum() {
 		return num;
 	}
+	
+	
+	
+	public DTO(int num, String str) {
+		super();
+		this.num = num;
+		this.str = str;
+	}
+
+
+
 	public void setNum(int num) {
 		this.num = num;
 	}
