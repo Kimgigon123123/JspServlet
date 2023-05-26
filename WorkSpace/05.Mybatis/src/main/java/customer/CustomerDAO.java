@@ -33,7 +33,7 @@ public class CustomerDAO {
 	
 	public void test() {
 		// 1.마이바티스 매퍼를 이용하여 dual테이블로 숫자 1가져오기.
-		int result = sql.selectOne("kym.dual");
+		int result = sql.selectOne("kgg.dual");
 		System.out.println(result);
 	}
 	
